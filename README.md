@@ -8,8 +8,6 @@ Technologies used
 
 Features
 
-Setup
-
 Usage
 
 Project status
@@ -23,10 +21,24 @@ Football has grown into the sport of the continent, loved almost universally and
 
 The objective of this challenge is to predict the outcome of a football match, based on historical match and player data.
 # Technologies used
-
+-SAS
+-VScode
+-Trello
+-Github
 # Features
-# Setup
+-Importing data
+-Loading Data
+-Data Preprocessing
+-Feature Engineering
+-Model Fit
+-Model Selection
+-Model Training
+-Model Deployment
+
 # Usage
+- These project will be used to predict score for football matches
 # Project status
+- Incomplete
 # Room for improvement
+- Use different model classifier to improve the accuracy of the model and do more feature selection
 # Acknowledgement
