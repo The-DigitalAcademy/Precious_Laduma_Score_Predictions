@@ -1,6 +1,5 @@
 import streamlit as st
 import pickle
-import pandas as pd
 
 #Function to load the selected model
 def load_model(model_name):
@@ -25,21 +24,34 @@ def main():
 
     # User input for features
     st.header('Feature Input')
-    df_train = pd.read_csv('train_data.csv')
+    
+    # feature1 = st.selectbox(label='Choose your Home Team ',options=['Antennae', 'Andromeda', 'Butterfly', 'Cartwheel', 'Sculptor',
+    #    'Cigar', 'Comet', 'Cosmos Redshift 7', 'Eye of Sauron',
+    #    'Medusa Merger', 'Milky Way', 'Sunflower', 'Tadpole', 'Fireworks',
+    #    'Backward', 'Circinus', 'Coma Pinwheel', 'Sombrero', 'Triangulum'])
+    CHOICES1={0:'Antennae',1: 'Andromeda',2: 'Butterfly',3: 'Cartwheel', 4:'Sculptor',
+       5:'Cigar',6: 'Comet', 7:'Cosmos Redshift 7',8: 'Eye of Sauron',
+       9:'Medusa Merger',10: 'Milky Way',11: 'Sunflower', 12:'Tadpole', 13:'Fireworks',
+       14:'Backward',15: 'Circinus',16: 'Coma Pinwheel', 17:'Sombrero', 18:'Triangulum'}
 
-    # Create a Streamlit app
-    st.title('Train Dataset App')
+    def format_func(option):
+    
+        return CHOICES1[option]
+    
+    feature1 = st.selectbox("Choose your Home Team", options=list(CHOICES1.keys()), format_func=format_func)
+    
+    CHOICES={0:'Andromeda',1: 'Antennae',2: 'Butterfly',3: 'Cigar', 4:'Circinus',
+       5:'Cartwheel',6: 'Coma Pinwheel', 7:'Comet',8: 'Cosmos Redshift 7',
+       9:'Fireworks',10: 'Medusa Merger',11: 'Milky Way', 12:'Backward', 13:'Sculptor',
+       14:'Sunflower',15: 'Triangulum',16: 'Eye of Sauron', 17:'Tadpole', 18:'Sombrero'}
 
-    # Create a selectbox widget using the 'Home Team' column from the train dataset
-    feature1 = st.selectbox('Home Team:', df_train['DEPSTN'].unique())
+    def format_func(option):
+    
+        return CHOICES[option]
+    
+    feature2 = st.selectbox("Choose your Away Team", options=list(CHOICES.keys()), format_func=format_func)
 
-    # Display the selected option
-    st.write('Selected Home Team:', feature1)
-
-    feature1 = st.selectbox('Home Team:', df_train['DEPSTN'].unique())
-    feature2 = st.selectbox('Arrival Station:', df_train['ARRSTN'].unique())
-    feature1 = st.number_input('Home Team', value=0)
-    feature2 = st.number_input('Away Team', value=0)
+ 
     feature3 = st.number_input('Shots on Target', value=0)
     feature4 = st.number_input('Goals Scored', value=0)
     feature5 = st.number_input('Goals Concided', value=0)
