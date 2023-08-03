@@ -38,7 +38,7 @@ The objective of this challenge is to predict the outcome of a football match, b
 # Usage
 - These project will be used to predict score for football matches
 # Project status
-- Incomplete
+- Complete
 # Room for improvement
 - Use different model classifier to improve the accuracy of the model and do more feature selection
 # Acknowledgement
